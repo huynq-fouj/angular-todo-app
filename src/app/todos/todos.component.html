@@ -1,0 +1,9 @@
+<div class="flex flex-col items-stretch">
+    @for(todo of todos; track todo.name; let index = $index) {
+        <app-todo-box [todo]="todo"
+            (click)="toggleComplete(index)"
+            (onRemove)="removeTodo(index)"></app-todo-box>
+    } @empty {
+        <p>Không có công việc nào!</p>
+    }
+</div>

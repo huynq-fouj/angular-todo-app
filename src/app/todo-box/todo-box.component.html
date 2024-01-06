@@ -1,0 +1,49 @@
+<div class="flex
+    items-center
+    rounded-md
+    border
+    border-gray-400
+    mb-3
+    p-2
+    shadow-md
+    min-w-80
+    max-w-80
+    sm:max-w-2xl
+    todo-box">
+    @if(todo.completed) {
+        <lord-icon
+            src="./assets/lord-icon-json/wired-lineal-37-approve-checked-simple.json"
+            trigger="hover"
+            target=".todo-box"
+            class="w-8
+                h-8
+                me-2">
+        </lord-icon>
+    } @else {
+        <div class="w-6
+                h-6
+                rounded-full
+                border
+                border-gray-600
+                me-4">
+        </div>
+    }
+    <p class="block
+        cursor-default
+        select-none
+        break-words
+        w-[calc(100%-72px)]">
+        {{todo.name}}
+    </p>
+    <lord-icon
+        src="./assets/lord-icon-json/wired-flat-185-trash-bin.json"
+        trigger="hover"
+        colors="primary:#b4b4b4,secondary:#ee6d66,tertiary:#ebe6ef,quaternary:#3a3347"
+        class="w-8
+            h-8
+            ms-auto
+            cursor-pointer
+            me-0"
+        (click)="removeClick($event)">
+    </lord-icon>
+</div>

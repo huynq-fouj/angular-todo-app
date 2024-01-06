@@ -1,0 +1,31 @@
+<div class="flex flex-col w-full pt-10 items-center">
+    <h1 class="font-bold font-[arial] my-5 text-xl">TODO APP</h1>
+    <div class="flex mb-5">
+        <form>
+            <input type="text"
+            placeholder="Nhập tên công việc"
+            class="rounded-md
+                border
+                p-2
+                me-2
+                box-border
+                focus:outline-teal-500"
+                [formControl]="todoName"
+                required>
+            <button class="bg-teal-500
+                text-white
+                px-5
+                py-2
+                rounded-md
+                box-border
+                hover:bg-teal-600
+                active:bg-teal-700
+                focus:outline-teal-500"
+                [disabled]="!todoName.valid"
+                (click)="addTodo()">
+                Thêm mới
+            </button>
+        </form>
+    </div>
+    <app-todos></app-todos>
+</div>
